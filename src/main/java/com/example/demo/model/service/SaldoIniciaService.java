@@ -55,7 +55,7 @@ public class SaldoIniciaService implements ISaldoInicialService{
 	}
 
 	@Override
-	public List<DtoSaldos> findByAnno(Anno anno) {
+	public List<SaldoInicialCuenta> findByAnno(Anno anno) {
 		// TODO Auto-generated method stub
 		return dao.findDataByYear(anno);
 	} 

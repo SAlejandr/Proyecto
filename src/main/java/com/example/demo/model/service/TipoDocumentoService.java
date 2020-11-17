@@ -30,13 +30,13 @@ public class TipoDocumentoService implements ITipoDocumentoService{
 	}
 
 	@Override
-	public Optional<TipoDocumento> findById(int id) {
+	public Optional<TipoDocumento> findById(String id) {
 		// TODO Auto-generated method stub
 		return dao.findById(id);
 	}
 
 	@Override
-	public boolean deleteById(int id) {
+	public boolean deleteById(String id) {
 		// TODO Auto-generated method stub
 		
 		boolean bool = dao.existsById(id);

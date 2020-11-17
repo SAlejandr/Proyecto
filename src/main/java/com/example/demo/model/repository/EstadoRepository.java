@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.pojos.Estado;
 
 @Repository
-public interface EstadoRepository extends JpaRepository<Estado, Byte> {
+public interface EstadoRepository extends JpaRepository<Estado, String> {
 
 }

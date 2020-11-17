@@ -41,8 +41,8 @@ public class CopiasController {
 		ResponseEntity<String> respuesta;
 		try{
 			//String cad = "\"" + rutaMySqlDump + "\" --opt --password=" + contrasenia + " --user=" + usuario + " " + dataBase + " > \"" + rutaFile +"\"\n";
-			String cad = "MySqlDump.exe" + " --opt --password=" + contrasenia + " --user=" + usuario + " --host=localhost --protocol=tcp --port=3307  --create-options --add-drop-table --quote-names ---column-statistics --lock-tables --dump-date --disable-keys --tz-utc "
-					+ " --add-locks --extendend-insert " + dataBase + " --result-file=\""  + rutaFile +"\"\n";
+			String cad = "MySqlDump.exe" + " --opt --add-drop-database --databases proyecto --password=" + contrasenia + " --user=" + usuario + " --host=localhost --protocol=tcp --port=3307  --create-options --add-drop-table --quote-names --lock-tables --dump-date --disable-keys --tz-utc "
+					+ " --add-locks " + dataBase + " --result-file=\""  + rutaFile +"\"\n";
 
 
 			System.out.println(cad);
@@ -73,7 +73,7 @@ public class CopiasController {
 		
 		try{
 			//String cad = "\"" + rutaMySql + "\" --opt --password=" + contrasenia + " --user=" + usuario + " " + dataBase + " < \"" + rutaFile +"\"\n";
-			String cad = "MySqlDump.exe" + " --opt --password=" + contrasenia + " --user=" + usuario + " --host=localhost --protocol=tcp --port=3307  " + dataBase + " < \"" + rutaFile +"\"\n";
+			String cad = "MySqlDump.exe" + " --password=" + contrasenia + " --user=" + usuario + " --host=localhost --protocol=tcp --port=3307  " + dataBase + " < \"" + rutaFile + "\"\n";
 
 			System.out.println(cad);
 

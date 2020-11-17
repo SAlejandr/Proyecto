@@ -75,6 +75,7 @@ public class DocumentoController {
 		//TODO: process PUT request
 		ResponseEntity<Documento> respuesta = new ResponseEntity<Documento>(HttpStatus.BAD_REQUEST);
 
+		System.out.println("Haciendo actualizacion");
 		IdDocumento id = documento.getIdDocumento();
 		Optional<Documento> optional = service.findById(id);
 

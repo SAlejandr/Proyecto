@@ -1,7 +1,7 @@
 package com.example.demo.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,32 +14,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.pojos.Anno;
-import com.example.demo.model.service.IAnnoService;
+import com.example.demo.model.pojos.LogSuceso;
+import com.example.demo.model.service.ILogService;
 
 @RestController
-@RequestMapping("pro/anno")
-public class AnnoController {
+@RequestMapping("pro/logSuceso")
+public class LogSucesoController {
 
 
-	@Autowired private IAnnoService service;
+	@Autowired private ILogService service;
 	/*
-	 * ResponseEntity<Anno> respuesta; 
+	 * ResponseEntity<LogSuceso> respuesta; 
 	 * HttpStatus status = HttpStatus.CREATED;
 	 * 
 	 * 
 	 * 
-	 * respuesta = new ResponseEntity<Anno>(status); 
+	 * respuesta = new ResponseEntity<LogSuceso>(status); 
 	 * 
 	 * return respuesta;
 	 */
 	@PostMapping("/add")
-	public ResponseEntity<Anno> annadirAnno(@RequestBody Anno a){
+	public ResponseEntity<LogSuceso> annadirLogSuceso(@RequestBody LogSuceso a){
 
-		ResponseEntity<Anno> respuesta; 
+		ResponseEntity<LogSuceso> respuesta; 
 
 		HttpStatus status;
-		if(!service.findById(a.getElAnno()).isPresent()) {
+		if(!service.findById(a.getConsecutivo()).isPresent()) {
 			status = HttpStatus.CREATED;
 
 			service.save(a);
@@ -48,17 +48,17 @@ public class AnnoController {
 			status = HttpStatus.BAD_REQUEST;
 		}
 
-		respuesta = new ResponseEntity<Anno>(status); 
+		respuesta = new ResponseEntity<LogSuceso>(status); 
 
 		return respuesta;
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<Anno> actualizarAnno(@RequestBody Anno a){
-		ResponseEntity<Anno> respuesta; 
+	public ResponseEntity<LogSuceso> actualizarLogSuceso(@RequestBody LogSuceso a){
+		ResponseEntity<LogSuceso> respuesta; 
 
 		HttpStatus status;
-		if(service.findById(a.getElAnno()).isPresent()) {
+		if(service.findById(a.getConsecutivo()).isPresent()) {
 			status = HttpStatus.ACCEPTED;
 
 			service.save(a);
@@ -67,48 +67,45 @@ public class AnnoController {
 			status = HttpStatus.BAD_REQUEST;
 		}
 
-		respuesta = new ResponseEntity<Anno>(status); 
+		respuesta = new ResponseEntity<LogSuceso>(status); 
 
 		return respuesta;
 
 	}
 
 	@GetMapping("/get")
-	public ResponseEntity<Anno> getAnno(@RequestParam int id){
+	public ResponseEntity<LogSuceso> getLogSuceso(@RequestParam long id){
 
-		ResponseEntity<Anno> respuesta;
+		ResponseEntity<LogSuceso> respuesta;
 		HttpStatus status = HttpStatus.OK;
 		
-		Anno a;
+		LogSuceso a;
 		
 		
 		status = HttpStatus.OK;
 		
-		a = service.findById(id).orElse(Anno.builder().elAnno(id).build());
+		a = (LogSuceso) service.findById(id).orElse(LogSuceso.builder().consecutivo(id).build());
 		
-		respuesta = new ResponseEntity<Anno>(a,status);
+		respuesta = new ResponseEntity<LogSuceso>(a,status);
 		
 		return respuesta;
 	}
 	
-	@GetMapping(value = "/inactivateAll")						//*******************************************
-	public String inactivarTodos(){
-		String respuesta = service.inactivarTodos();
-		return respuesta;
-	}
-	
+
 	
 	@GetMapping("/get/all")
-	public List<Anno> getAll(){
+	public List<LogSuceso> getAll(){
 		
-		return service.findAll();
+		ArrayList<LogSuceso> lista = new ArrayList<LogSuceso>();
+		service.findAll().stream().filter(l -> l instanceof LogSuceso).forEach(l -> lista.add((LogSuceso) l));
+		return (List<LogSuceso>)lista;
 		
 	}
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<Anno> deleteById(@RequestParam int id){
+	public ResponseEntity<LogSuceso> deleteById(@RequestParam int id){
 		
-		ResponseEntity<Anno> respuesta;
+		ResponseEntity<LogSuceso> respuesta;
 		
 		HttpStatus status;
 		
@@ -121,9 +118,11 @@ public class AnnoController {
 			status = HttpStatus.BAD_REQUEST;
 		}
 		
-		respuesta = new ResponseEntity<Anno>(status);
+		respuesta = new ResponseEntity<LogSuceso>(status);
 		
 		return respuesta;
 	}
+
+	
 
 }

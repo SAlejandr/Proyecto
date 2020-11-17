@@ -18,7 +18,7 @@ public interface ISaldoInicialService {
 	
 	public List<SaldoInicialCuenta> findAll();
 	
-	public List<DtoSaldos> findByAnno(Anno anno);
+	public List<SaldoInicialCuenta> findByAnno(Anno anno);
 	
 	public boolean deleteById(IdSaldoInicial id);
 }

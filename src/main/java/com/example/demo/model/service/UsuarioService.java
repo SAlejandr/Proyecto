@@ -36,7 +36,7 @@ public class UsuarioService implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return dao.findById(id);
 	}
-
+	
 	@Override
 	public void save(Usuario user) {
 		// TODO Auto-generated method stub
@@ -58,5 +58,10 @@ public class UsuarioService implements IUsuarioService{
 		return exito;
 	}
 
+	@Override
+	public Optional<Usuario> findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return dao.findByUsername(username);
+	}
 
 }

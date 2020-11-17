@@ -16,16 +16,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.pojos.Documento;
+import com.example.demo.model.pojos.IdDocumento;
 import com.example.demo.model.pojos.IdMovimiento;
 import com.example.demo.model.pojos.Mes;
 import com.example.demo.model.pojos.Movimiento;
+import com.example.demo.model.pojos.TipoDocumento;
+import com.example.demo.model.service.IDocumentoService;
 import com.example.demo.model.service.IMovimientoService;
+import com.example.demo.model.service.ITipoDocumentoService;
+import com.example.demo.model.service.TipoDocumentoService;
+
 
 @RestController
 @RequestMapping("pro/movimiento")
 public class MovimientoController {
 
 	@Autowired private IMovimientoService service;
+	@Autowired private IDocumentoService documentoService;
+	@Autowired private ITipoDocumentoService tipoDocumentoService;
 
 	@PostMapping(value = "/add")
 	public ResponseEntity<Movimiento> addMovimiento(@RequestBody Movimiento movimiento) {
@@ -67,10 +76,20 @@ public class MovimientoController {
 	}
 	
 	@GetMapping(value = "/getByMes")
-	public List<Movimiento> getMethodName(@RequestBody Mes mes) {
+	public List<Movimiento> getByMes(@RequestBody Mes mes) {
 		return service.buscarPorMes(mes);
 	}
 	
+	@GetMapping(value = "/getByDocumento")
+	public List<Movimiento> getByDocumento(@RequestParam(name = "n") String numDoc, @RequestParam(name = "tDoc") String tipoDoc){
+		
+		TipoDocumento d = tipoDocumentoService.findById(tipoDoc).get();
+		IdDocumento id = new IdDocumento(d, Long.parseLong(numDoc));
+		
+		Optional<Documento> documento = documentoService.findById(id);
+		
+		return service.buscarPorDocumento(documento.get());
+	}
 	
 	@GetMapping(value = "/get")
 	public ResponseEntity<Movimiento> getMovimiento(@RequestBody IdMovimiento id) {

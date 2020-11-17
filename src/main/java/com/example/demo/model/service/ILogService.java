@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.model.pojos.Log;
+import com.example.demo.model.pojos.LogAcceso;
+import com.example.demo.model.pojos.Mes;
 
 public interface ILogService {
 
@@ -15,4 +17,5 @@ public interface ILogService {
 	public List<Log> findAll();
 	
 	public boolean deleteById(long consecutivo);
+
 }

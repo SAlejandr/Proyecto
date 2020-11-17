@@ -1,5 +1,6 @@
 package com.example.demo.model.pojos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -21,7 +22,8 @@ public class Estado {
 
 	@Include
 	@Id
-	private byte codEstado;
+	@Column(length = 2)
+	private String codEstado;
 	
 	private String descripcion;
 }

@@ -25,7 +25,7 @@ public class SaldoInicialTercero implements Serializable{
 	private IdSaldoInTercero id;
 	
 	@Column(precision = 2)
-	private float debito;
+	private double debito;
 	@Column(precision = 2)
-	private float credito;
+	private double credito;
 }

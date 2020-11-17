@@ -11,8 +11,8 @@ public interface ITipoDocumentoService {
 
 	public List<TipoDocumento> findAll();
 
-	public Optional<TipoDocumento> findById(int id);
+	public Optional<TipoDocumento> findById(String id);
 
-	public boolean deleteById(int id);
+	public boolean deleteById(String id);
 
 }

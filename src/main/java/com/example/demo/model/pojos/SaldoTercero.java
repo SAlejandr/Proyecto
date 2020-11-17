@@ -27,13 +27,13 @@ public class SaldoTercero implements Serializable{
 	private IdSaldoTercero id;
 	
 	@Column(precision = 2)
-	private float sumDebito;
+	private double sumDebito;
 	@Column(precision = 2)
-	private float sumCredito;
+	private double sumCredito;
 	
 	@Column(precision = 2)
-	private float totalDebito;
+	private double totalDebito;
 	@Column(precision = 2)
-	private float totalCredito; 
+	private double totalCredito; 
 
 }

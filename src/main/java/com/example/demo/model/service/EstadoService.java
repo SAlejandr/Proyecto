@@ -15,7 +15,7 @@ public class EstadoService implements IEstadoService{
 	@Autowired private EstadoRepository dao;
 	
 	@Override
-	public Optional<Estado> findById(byte id) {
+	public Optional<Estado> findById(String id) {
 		// TODO Auto-generated method stub
 		return dao.findById(id);
 	}
@@ -34,7 +34,7 @@ public class EstadoService implements IEstadoService{
 	}
 
 	@Override
-	public boolean deleteById(byte id) {
+	public boolean deleteById(String id) {
 		// TODO Auto-generated method stub
 		boolean exito = false;
 		

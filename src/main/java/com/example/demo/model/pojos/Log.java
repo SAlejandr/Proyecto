@@ -1,6 +1,7 @@
 package com.example.demo.model.pojos;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
 public abstract class Log implements Serializable{
 
 	@Id
@@ -35,6 +36,5 @@ public abstract class Log implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "codUsuario")
 	private Usuario usuario;
-	
 	
 }

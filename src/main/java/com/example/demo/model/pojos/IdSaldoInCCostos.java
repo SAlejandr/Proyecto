@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -18,12 +20,15 @@ import lombok.experimental.SuperBuilder;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @ToString(callSuper = true)
-@SuperBuilder
+@Builder
 
 @Embeddable
-public class IdSaldoInCCostos extends IdSaldoInicial implements Serializable{
+public class IdSaldoInCCostos  implements Serializable{
+	
+	@Embedded
+	private IdSaldoInicial idSaldoIn;
 
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name = "cCostos")

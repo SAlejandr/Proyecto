@@ -38,8 +38,8 @@ public class SaldoInicialTerceroController {
 
 
 		if(subservice.findById(IdSaldoInicial.builder().
-				cuenta(saldoInicial.getId().getCuenta()).
-				anno(saldoInicial.getId().getAnno()).
+				cuenta(saldoInicial.getId().getIdSaldoIn().getCuenta()).
+				anno(saldoInicial.getId().getIdSaldoIn().getAnno()).
 				build()).isPresent()) {
 			Optional<SaldoInicialTercero> optional = service.findById(saldoInicial.getId());
 
@@ -62,8 +62,8 @@ public class SaldoInicialTerceroController {
 
 
 		if(subservice.findById(IdSaldoInicial.builder().
-				cuenta(saldoInicial.getId().getCuenta()).
-				anno(saldoInicial.getId().getAnno()).
+				cuenta(saldoInicial.getId().getIdSaldoIn().getCuenta()).
+				anno(saldoInicial.getId().getIdSaldoIn().getAnno()).
 				build()).isPresent()) {
 			Optional<SaldoInicialTercero> optional = service.findById(saldoInicial.getId());
 

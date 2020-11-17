@@ -16,4 +16,6 @@ public interface IUsuarioService {
 	public void save(Usuario user);
 	
 	public boolean deleteById(int id);
+
+	public Optional<Usuario> findByUsername(String username);
 }

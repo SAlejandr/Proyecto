@@ -16,6 +16,6 @@ public interface SaldoInicialRepository extends JpaRepository<SaldoInicialCuenta
 
 	
 	@Query("SELECT s.id.cuenta as cuenta, s.debito as debito, s.credito as credito FROM SaldoInicialCuenta s where s.id.anno = ?1")
-	public List<DtoSaldos> findDataByYear(Anno anno);
+	public List<SaldoInicialCuenta> findDataByYear(Anno anno);
 	
 }

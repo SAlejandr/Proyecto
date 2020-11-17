@@ -61,7 +61,7 @@ public class MesService implements IMesService{
 	}
 
 	@Override
-	public String inactivarTodos() {					//***************************************
+	public String inactivarTodos() {				
 		// TODO Auto-generated method stub
 		dao.inactivarTodos();
 		return  "exito";

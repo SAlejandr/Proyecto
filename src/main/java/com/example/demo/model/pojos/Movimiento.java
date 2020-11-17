@@ -1,6 +1,7 @@
 package com.example.demo.model.pojos;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
@@ -31,7 +32,7 @@ public class Movimiento implements Serializable {
 	@Include
 	private IdMovimiento id;
 
-	private LocalDateTime fecha;
+	private LocalDate fecha;
 
 	private String concepto;
 

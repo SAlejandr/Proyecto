@@ -15,15 +15,15 @@ import lombok.experimental.SuperBuilder;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@SuperBuilder
 
 @Entity
-public class LogAcceso extends Log  implements Serializable {
+public class LogAcceso extends Log implements Serializable {
 
 	private LocalDateTime instanteDeAcceso;
-
-	private LocalDateTime instanteDeSalida;
 	
+	private LocalDateTime instanteDeSalida;
+
 }

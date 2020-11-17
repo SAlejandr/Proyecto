@@ -24,7 +24,7 @@ public interface MesRepository extends JpaRepository<Mes, MesFiscalId> {
 	
 	@Transactional
 	@Modifying
-	@Query("UPDATE Mes m SET m.estado = 'CERRADO'")					//************************************
+	@Query("UPDATE Mes m SET m.estado = 'CERRADO'")			
 	public void inactivarTodos();
 	
 }

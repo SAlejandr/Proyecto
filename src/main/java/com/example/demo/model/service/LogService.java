@@ -1,5 +1,6 @@
 package com.example.demo.model.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.pojos.Log;
+import com.example.demo.model.pojos.LogAcceso;
+import com.example.demo.model.pojos.Mes;
+import com.example.demo.model.pojos.Movimiento;
 import com.example.demo.model.repository.LogRepository;
 
 @Service

@@ -21,7 +21,7 @@ public interface IMesService {
 
 	public boolean deleteById(MesFiscalId id);
 	
-	public String inactivarTodos();							//*******************************
+	public String inactivarTodos();							
 
 
 }

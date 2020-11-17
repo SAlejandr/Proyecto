@@ -1,6 +1,5 @@
 package com.example.demo.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,13 +66,13 @@ public class MesController {
 		return respuesta;
 	}
 	
-	@GetMapping(value = "/inactivateAll")						//*******************************************
+	@GetMapping(value = "/inactivateAll")						
 	public String inactivarTodos(){
 		String respuesta = service.inactivarTodos();
 		return respuesta;
 	}
 
-	@PostMapping(value = "/get")													//*******************************************
+	@PostMapping(value = "/get")													
 	public ResponseEntity<Mes> getMes(@RequestBody MesFiscalId id) {
 		
 		ResponseEntity<Mes> respuesta;

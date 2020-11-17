@@ -31,7 +31,7 @@ public class EstadoController {
 	}
 
 	@GetMapping(value = "/get")
-	public ResponseEntity<Estado> findById(@RequestParam Byte id) {
+	public ResponseEntity<Estado> findById(@RequestParam String id) {
 
 		ResponseEntity<Estado> respuesta;
 
@@ -80,7 +80,7 @@ public class EstadoController {
 	}
 
 	@DeleteMapping(value = "/delete")
-	public ResponseEntity<Estado> delete(@RequestParam Byte id){
+	public ResponseEntity<Estado> delete(@RequestParam String id){
 		
 		ResponseEntity<Estado> respuesta;
 		

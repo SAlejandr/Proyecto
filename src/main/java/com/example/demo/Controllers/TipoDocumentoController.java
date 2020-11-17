@@ -62,7 +62,7 @@ public class TipoDocumentoController {
 	}
 
 	@DeleteMapping(value = "/delete")
-	public ResponseEntity<TipoDocumento> deleteTipo(@RequestParam int id ) {
+	public ResponseEntity<TipoDocumento> deleteTipo(@RequestParam String id ) {
 		//TODO: process DELETE request
 
 		ResponseEntity<TipoDocumento> respuesta;
@@ -77,7 +77,7 @@ public class TipoDocumentoController {
 	}
 
 	@GetMapping(value = "/get")
-	public ResponseEntity<TipoDocumento> getTipo(@RequestParam int id) {
+	public ResponseEntity<TipoDocumento> getTipo(@RequestParam String id) {
 		
 		ResponseEntity<TipoDocumento> respuesta;
 		Optional<TipoDocumento> optional = service.findById(id);

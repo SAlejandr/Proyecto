@@ -2,6 +2,7 @@ package com.example.demo.model.pojos;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,8 +23,8 @@ public class TipoDocumento implements Serializable {
 
 	@Id
 	@Include
-	@GeneratedValue
-	private int tipoDoc;
+	@Column(length = 2)
+	private String tipoDoc;
 
 	private String nombreDocumento;
 
