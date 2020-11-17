@@ -1,0 +1,7 @@
+com.example.demo
+com.example.demo.Controllers
+com.example.demo.model.dto
+com.example.demo.model.pojos
+com.example.demo.model.repository
+com.example.demo.model.service
+com.example.demo.security
