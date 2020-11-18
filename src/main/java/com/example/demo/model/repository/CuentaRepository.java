@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.pojos.Cuenta;
 
 @Repository
-public interface CuentaRepository extends JpaRepository<Cuenta, Integer> {
+public interface CuentaRepository extends JpaRepository<Cuenta, String> {
 
 	public List<Cuenta> findByMovimientos(boolean movimiento);
 	

@@ -53,7 +53,7 @@ public class CuentaController {
 	}
 
 	@DeleteMapping(value = "/delete/{id}")
-	public ResponseEntity<Cuenta> deleteMethodName(@RequestParam Integer id) {
+	public ResponseEntity<Cuenta> deleteMethodName(@RequestParam String id) {
 		//TODO: process DELETE request
 		
 		ResponseEntity<Cuenta> response;
@@ -68,7 +68,7 @@ public class CuentaController {
 
 	
 	@GetMapping("/get")
-	public ResponseEntity<Cuenta> get(@RequestParam int id) {
+	public ResponseEntity<Cuenta> get(@RequestParam String id) {
 		
 		Cuenta c = service.findById(id).orElse(Cuenta.builder().codCuenta(id).build());
 		

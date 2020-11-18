@@ -27,13 +27,13 @@ public class CuentaService implements ICuentaService{
 	}
 
 	@Override
-	public Optional<Cuenta> findById(int id) {
+	public Optional<Cuenta> findById(String id) {
 		// TODO Auto-generated method stub
 		return dao.findById(id);
 	}
 
 	@Override
-	public boolean deleteById(int id) {
+	public boolean deleteById(String id) {
 		// TODO Auto-generated method stub
 		
 		boolean exito = false;

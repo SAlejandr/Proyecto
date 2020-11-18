@@ -31,7 +31,7 @@ public class Cuenta implements Serializable {
 
 	@Id
 	@Include
-	private int codCuenta;
+	private String codCuenta;
 
 	@Column(name = "nom_cuenta")
 	private String nombre;
@@ -39,6 +39,9 @@ public class Cuenta implements Serializable {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "claseCuenta")
 	private ConfiguracionCuentas claseCuenta;
+	
+	@Enumerated(EnumType.STRING)
+	private NaturalezaCuenta natCuenta;
 
 	private boolean movimientos;
 	private boolean terceros;

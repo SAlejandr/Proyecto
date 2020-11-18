@@ -15,8 +15,8 @@ public interface ICuentaService {
 	public List<Cuenta> findCuentasMovibleConTerceros();
 	public List<Cuenta> findCuentasMoviblesConCCostos();
 
-	public Optional<Cuenta> findById(int id);
+	public Optional<Cuenta> findById(String id);
 
-	public boolean deleteById(int id);
+	public boolean deleteById(String id);
 
 }
