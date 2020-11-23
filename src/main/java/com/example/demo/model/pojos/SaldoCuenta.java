@@ -1,6 +1,7 @@
 package com.example.demo.model.pojos;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -26,13 +27,13 @@ public class SaldoCuenta implements Serializable{
 	@Include
 	private IdSaldo id;
 	
-	@Column(precision = 2)
-	private float sumDebito;
-	@Column(precision = 2)
-	private float sumCredito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal sumDebito;
+	@Column(precision = 15, scale = 2)	
+	private BigDecimal sumCredito;
 	
-	@Column(precision = 2)
-	private float totalDebito;
-	@Column(precision = 2)
-	private float totalCredito; 
+	@Column(precision = 15, scale = 2)
+	private BigDecimal totalDebito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal totalCredito; 
 }

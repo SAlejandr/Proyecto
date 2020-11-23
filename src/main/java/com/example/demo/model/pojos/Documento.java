@@ -1,5 +1,6 @@
 package com.example.demo.model.pojos;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -33,7 +34,7 @@ public class Documento {
 	private LocalDate fecha;
 
 	@Column(name = "valor_total", precision = 2)
-	private float valorTotal;
+	private BigDecimal valorTotal;
 
 	private String concepto;
 	

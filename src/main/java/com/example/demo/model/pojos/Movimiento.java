@@ -1,6 +1,7 @@
 package com.example.demo.model.pojos;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -48,9 +49,9 @@ public class Movimiento implements Serializable {
 	@JoinColumn(name = "cod_tercero")
 	private Tercero tercero;
 
-	private float base;
-	private float credito;
-	private float debito;
+	private BigDecimal base;
+	private BigDecimal credito;
+	private BigDecimal debito;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="estado")

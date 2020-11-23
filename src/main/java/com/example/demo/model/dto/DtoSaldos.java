@@ -1,5 +1,7 @@
 package com.example.demo.model.dto;
 
+import java.math.BigDecimal;
+
 import com.example.demo.model.pojos.Cuenta;
 import com.example.demo.model.pojos.SaldoCuenta;
 
@@ -16,9 +18,9 @@ public class DtoSaldos {
 	
 	private Cuenta cuenta;
 	
-	private float debito;
+	private BigDecimal debito;
 	
-	private float credito;
+	private BigDecimal credito;
 	
 	public static DtoSaldos extraerDatosSaldos(SaldoCuenta s) {
 		

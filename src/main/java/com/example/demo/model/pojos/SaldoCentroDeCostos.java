@@ -1,5 +1,7 @@
 package com.example.demo.model.pojos;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -22,14 +24,14 @@ public class SaldoCentroDeCostos {
 	@EmbeddedId
 	private IdSaldoCCostos elID;
 
-	@Column(precision = 2)
-	private float sumDebito;
-	@Column(precision = 2)
-	private float sumCredito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal sumDebito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal sumCredito;
 	
-	@Column(precision = 2)
-	private float totalDebito;
-	@Column(precision = 2)
-	private float totalCredito; 
+	@Column(precision = 15, scale = 2)
+	private BigDecimal totalDebito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal totalCredito; 
 	
 }

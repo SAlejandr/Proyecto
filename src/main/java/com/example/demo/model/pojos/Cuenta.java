@@ -39,16 +39,12 @@ public class Cuenta implements Serializable {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "claseCuenta")
 	private ConfiguracionCuentas claseCuenta;
-	
-	@Enumerated(EnumType.STRING)
-	private NaturalezaCuenta natCuenta;
 
 	private boolean movimientos;
 	private boolean terceros;
 	private boolean ccostos;
-
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "cuenta_superior")
-	private Cuenta cuentaSuperior;
+	@Enumerated(EnumType.STRING)
+	private NaturalezaCuenta natCuenta;
+	private String cuentaSuperior;
 
 }

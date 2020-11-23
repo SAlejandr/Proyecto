@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.pojos.IdSaldoCCostos;
 import com.example.demo.model.pojos.SaldoCentroDeCostos;
 import com.example.demo.model.service.ISaldoCCostosService;
 import com.example.demo.model.service.SaldoCCostosService;
 
+@RestController
+@RequestMapping("pro/saldos/saldoCCostos")
 public class SaldoCCostosController {
 	@Autowired private ISaldoCCostosService service;
 

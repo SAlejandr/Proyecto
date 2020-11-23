@@ -1,6 +1,7 @@
 package com.example.demo.model.pojos;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -24,9 +25,9 @@ public class SaldoInicialCuenta implements Serializable{
 	@EmbeddedId
 	private IdSaldoInicial id;
 
-	@Column(precision = 2)
-	private double debito;
-	@Column(precision = 2)
-	private double credito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal debito;
+	@Column(precision = 15, scale = 2)
+	private BigDecimal credito;
 	
 }
