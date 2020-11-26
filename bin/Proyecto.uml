@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_yEor4IntEeqQQfkl9oR9gQ" name="Proyecto">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_ySXl4IntEeqQQfkl9oR9gQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_uV8JkIoOEeqQQfkl9oR9gQ" name="Modelo">
+    <packagedElement xmi:type="uml:Component" xmi:id="_1To3UIoVEeqQQfkl9oR9gQ" name="Pojos"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_8_yDoIoVEeqQQfkl9oR9gQ" name="Repositorios"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_j1kogIoWEeqQQfkl9oR9gQ" name="Servicios">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_y8BDMIoWEeqQQfkl9oR9gQ" client="_j1kogIoWEeqQQfkl9oR9gQ" supplier="_8_yDoIoVEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_qKI94IoWEeqQQfkl9oR9gQ" client="_1To3UIoVEeqQQfkl9oR9gQ" supplier="_8_yDoIoVEeqQQfkl9oR9gQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1_8uQIoWEeqQQfkl9oR9gQ" client="_8_yDoIoVEeqQQfkl9oR9gQ" supplier="_1To3UIoVEeqQQfkl9oR9gQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2pI1MIoWEeqQQfkl9oR9gQ" client="_8_yDoIoVEeqQQfkl9oR9gQ" supplier="_j1kogIoWEeqQQfkl9oR9gQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_E5VScIoZEeqQQfkl9oR9gQ" client="_uV8JkIoOEeqQQfkl9oR9gQ" supplier="_A3ZuEIoZEeqQQfkl9oR9gQ"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_wLoHwIotEeqQQfkl9oR9gQ" name="Seguridad"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FvJVwIo9EeqQQfkl9oR9gQ" client="_uV8JkIoOEeqQQfkl9oR9gQ" supplier="__NC6sIo8EeqQQfkl9oR9gQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1tzjcIoYEeqQQfkl9oR9gQ" name="Vista">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_CTHMMIobEeqQQfkl9oR9gQ" client="_A3ZuEIoZEeqQQfkl9oR9gQ" supplier="_yEor4IntEeqQQfkl9oR9gQ _1tzjcIoYEeqQQfkl9oR9gQ"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_WGmk0IobEeqQQfkl9oR9gQ" name="Pantalla Principal"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_bEgCMIobEeqQQfkl9oR9gQ" name="Administracion">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_7ZbiIIobEeqQQfkl9oR9gQ" client="_bEgCMIobEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_sSD6YIobEeqQQfkl9oR9gQ" name="Auditoria">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_9NT6kIobEeqQQfkl9oR9gQ" client="_sSD6YIobEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_vrzdYIobEeqQQfkl9oR9gQ" name="Reportes">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_4qpnsIobEeqQQfkl9oR9gQ" client="_vrzdYIobEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_RyteAIosEeqQQfkl9oR9gQ" name="Reportes">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_TpA4UIosEeqQQfkl9oR9gQ" client="_RyteAIosEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_7ngKoIosEeqQQfkl9oR9gQ" name="Captura de movimiento y docuentos">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_LcROcIouEeqQQfkl9oR9gQ" client="_7ngKoIosEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_Rz4QwIouEeqQQfkl9oR9gQ" name="Gestio de periodos"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_gG5DYIouEeqQQfkl9oR9gQ" name="Cierres contables">
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_mFV-0IouEeqQQfkl9oR9gQ" client="_gG5DYIouEeqQQfkl9oR9gQ" supplier="_WGmk0IobEeqQQfkl9oR9gQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Df-zsIo2EeqQQfkl9oR9gQ" client="_1tzjcIoYEeqQQfkl9oR9gQ" supplier="_A3ZuEIoZEeqQQfkl9oR9gQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_A3ZuEIoZEeqQQfkl9oR9gQ" name="Controladores">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FB8VsIo2EeqQQfkl9oR9gQ" client="_A3ZuEIoZEeqQQfkl9oR9gQ" supplier="_uV8JkIoOEeqQQfkl9oR9gQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="__NC6sIo8EeqQQfkl9oR9gQ" name="Base de datos">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FASrsIo9EeqQQfkl9oR9gQ" client="__NC6sIo8EeqQQfkl9oR9gQ" supplier="_uV8JkIoOEeqQQfkl9oR9gQ"/>
+  </packagedElement>
+</uml:Model>

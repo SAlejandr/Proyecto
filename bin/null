@@ -1,0 +1,308 @@
+-- MariaDB dump 10.17  Distrib 10.4.11-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: proyecto
+-- ------------------------------------------------------
+-- Server version	8.0.19
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `anno_fiscal`
+--
+
+LOCK TABLES `anno_fiscal` WRITE;
+/*!40000 ALTER TABLE `anno_fiscal` DISABLE KEYS */;
+INSERT INTO `anno_fiscal` VALUES (2019,'','2019-12-31','2019-01-01'),(2020,'','2020-12-31','2020-01-01'),(2021,'\0','2021-12-31','2021-01-01'),(2018,'','2018-12-31','2018-01-01');
+/*!40000 ALTER TABLE `anno_fiscal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `centro_de_costo`
+--
+
+LOCK TABLES `centro_de_costo` WRITE;
+/*!40000 ALTER TABLE `centro_de_costo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `centro_de_costo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `ciudad`
+--
+
+LOCK TABLES `ciudad` WRITE;
+/*!40000 ALTER TABLE `ciudad` DISABLE KEYS */;
+INSERT INTO `ciudad` VALUES ('001','Armenia',300100,63),('001','Medellin',4000000,5),('001','Manizales',150000,17),('001','Bogota.D.C',8000000,11);
+/*!40000 ALTER TABLE `ciudad` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `compania`
+--
+
+LOCK TABLES `compania` WRITE;
+/*!40000 ALTER TABLE `compania` DISABLE KEYS */;
+INSERT INTO `compania` VALUES ('','63001','DORA CECILIA SUAREZ AMAYA','CRA 16 NO. 20 - 06','111111','COOPERATIVA DE AHORRO Y CREDITO CAFETERA','JULIO CESAR TARQUINO GALVIS','CARLOS ALBERTO MONTES','666666','800069925');
+/*!40000 ALTER TABLE `compania` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `configuracion_cuentas`
+--
+
+LOCK TABLES `configuracion_cuentas` WRITE;
+/*!40000 ALTER TABLE `configuracion_cuentas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `configuracion_cuentas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `configuracion_de_plan_de_cuentas`
+--
+
+LOCK TABLES `configuracion_de_plan_de_cuentas` WRITE;
+/*!40000 ALTER TABLE `configuracion_de_plan_de_cuentas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `configuracion_de_plan_de_cuentas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `cuenta`
+--
+
+LOCK TABLES `cuenta` WRITE;
+/*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `departamento`
+--
+
+LOCK TABLES `departamento` WRITE;
+/*!40000 ALTER TABLE `departamento` DISABLE KEYS */;
+INSERT INTO `departamento` VALUES (63,'Quindio'),(5,'Antioquia'),(17,'Caldas'),(19,'Cauca'),(27,'Chocó'),(66,'Risaralda'),(76,'Valle del Cauca'),(11,'Bogota');
+/*!40000 ALTER TABLE `departamento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `documento`
+--
+
+LOCK TABLES `documento` WRITE;
+/*!40000 ALTER TABLE `documento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `documento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `estado`
+--
+
+LOCK TABLES `estado` WRITE;
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `estados_de_movimientos`
+--
+
+LOCK TABLES `estados_de_movimientos` WRITE;
+/*!40000 ALTER TABLE `estados_de_movimientos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estados_de_movimientos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+LOCK TABLES `hibernate_sequence` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` VALUES (1),(1),(1);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `hibernate_sequences`
+--
+
+LOCK TABLES `hibernate_sequences` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequences` DISABLE KEYS */;
+INSERT INTO `hibernate_sequences` VALUES ('default',19);
+/*!40000 ALTER TABLE `hibernate_sequences` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `log`
+--
+
+LOCK TABLES `log` WRITE;
+/*!40000 ALTER TABLE `log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `log_acceso`
+--
+
+LOCK TABLES `log_acceso` WRITE;
+/*!40000 ALTER TABLE `log_acceso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `log_acceso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `log_suceso`
+--
+
+LOCK TABLES `log_suceso` WRITE;
+/*!40000 ALTER TABLE `log_suceso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `log_suceso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `mes_fiscal`
+--
+
+LOCK TABLES `mes_fiscal` WRITE;
+/*!40000 ALTER TABLE `mes_fiscal` DISABLE KEYS */;
+INSERT INTO `mes_fiscal` VALUES ('2','ACTIVO','2020-02-29','2020-02-01',2020,'FEBRERO DE 2020'),('1','CERRADO','2020-01-31','2020-01-01',2020,'ENERO DE 2020');
+/*!40000 ALTER TABLE `mes_fiscal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `movimiento`
+--
+
+LOCK TABLES `movimiento` WRITE;
+/*!40000 ALTER TABLE `movimiento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `movimiento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `responsable`
+--
+
+LOCK TABLES `responsable` WRITE;
+/*!40000 ALTER TABLE `responsable` DISABLE KEYS */;
+/*!40000 ALTER TABLE `responsable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_centro_de_costos`
+--
+
+LOCK TABLES `saldo_centro_de_costos` WRITE;
+/*!40000 ALTER TABLE `saldo_centro_de_costos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_centro_de_costos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_cuenta`
+--
+
+LOCK TABLES `saldo_cuenta` WRITE;
+/*!40000 ALTER TABLE `saldo_cuenta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_cuenta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_inicial_centro_de_costos`
+--
+
+LOCK TABLES `saldo_inicial_centro_de_costos` WRITE;
+/*!40000 ALTER TABLE `saldo_inicial_centro_de_costos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_inicial_centro_de_costos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_inicial_cuenta`
+--
+
+LOCK TABLES `saldo_inicial_cuenta` WRITE;
+/*!40000 ALTER TABLE `saldo_inicial_cuenta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_inicial_cuenta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_inicial_tercero`
+--
+
+LOCK TABLES `saldo_inicial_tercero` WRITE;
+/*!40000 ALTER TABLE `saldo_inicial_tercero` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_inicial_tercero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `saldo_tercero`
+--
+
+LOCK TABLES `saldo_tercero` WRITE;
+/*!40000 ALTER TABLE `saldo_tercero` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saldo_tercero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `suceso`
+--
+
+LOCK TABLES `suceso` WRITE;
+/*!40000 ALTER TABLE `suceso` DISABLE KEYS */;
+/*!40000 ALTER TABLE `suceso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `tabla`
+--
+
+LOCK TABLES `tabla` WRITE;
+/*!40000 ALTER TABLE `tabla` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tabla` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `tercero`
+--
+
+LOCK TABLES `tercero` WRITE;
+/*!40000 ALTER TABLE `tercero` DISABLE KEYS */;
+INSERT INTO `tercero` VALUES ('800069925','CRA 16 nO. 20-06','clientes@cofincafe.com','NIT','S_ANONIMA','COOPERATIVA DE AHORRO Y CREDITO CAFETERA','7777777','66666666','001',63,1);
+/*!40000 ALTER TABLE `tercero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `tipo_documento`
+--
+
+LOCK TABLES `tipo_documento` WRITE;
+/*!40000 ALTER TABLE `tipo_documento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tipo_documento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'EN_FUNCIONES','2020-10-01','123','CONTABILIDAD','admin');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'proyecto'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-11-14  0:09:38
