@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode.Include;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
