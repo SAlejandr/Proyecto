@@ -20,7 +20,12 @@ public interface MesRepository extends JpaRepository<Mes, MesFiscalId> {
 
 	public List<Mes> findByInicioGreaterThanEqualAndFinLessThan(LocalDate d1, LocalDate d2);
 	
+	public Optional<Mes> findByNombre(String nombre);
+	
 	public Optional<Mes> findByFin(LocalDate fin);
+	
+	@Query("select mes from Mes mes where  ?1 between mes.inicio and mes.fin")
+	public List<Mes> findByFechaDeterminadad(LocalDate fecha);
 	
 	@Transactional
 	@Modifying

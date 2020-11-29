@@ -1,5 +1,6 @@
 package com.example.demo.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,9 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.pojos.Documento;
 import com.example.demo.model.pojos.IdDocumento;
 import com.example.demo.model.pojos.Mes;
+import com.example.demo.model.pojos.MesFiscalId;
 import com.example.demo.model.pojos.Movimiento;
 import com.example.demo.model.service.IDocumentoService;
+import com.example.demo.model.service.IMesService;
 import com.example.demo.model.service.IMovimientoService;
+import com.example.demo.model.service.MesService;
 
 @RestController
 @RequestMapping("pro/documento")
@@ -29,6 +33,7 @@ public class DocumentoController {
 
 	@Autowired private IDocumentoService service;
 	@Autowired private IMovimientoService subService;
+	@Autowired private IMesService mesService;
 
 
 	@GetMapping("/get")
@@ -46,6 +51,20 @@ public class DocumentoController {
 	@GetMapping(value = "/getAll")
 	public List<Documento> getAllDocumentos() {
 		return service.findAll();
+	}
+	
+	@GetMapping(value = "/getAllByMes")
+	public List<Documento> getAllByMes(@RequestParam String nombreMes){
+		Optional<Mes> optional = mesService.buscarPorNombre(nombreMes);
+		
+		ArrayList<Documento> documentos = new ArrayList<Documento>();
+		
+		if(optional.isPresent()) {
+			
+			documentos.addAll(service.buscarPorMes(optional.get()));
+		}
+		
+		return documentos;
 	}
 
 	@GetMapping(value = "/getMovimientos")

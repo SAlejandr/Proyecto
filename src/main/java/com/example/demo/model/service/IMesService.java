@@ -13,6 +13,8 @@ public interface IMesService {
 
 	public List<Mes> findAll();
 	
+	public Optional<Mes> buscarPorNombre(String nombre);
+	
 	public List<Mes> buscarMesesEnRango(LocalDate d1, LocalDate d2);
 
 	public Optional<Mes> findById(MesFiscalId id);

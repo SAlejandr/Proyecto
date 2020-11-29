@@ -49,6 +49,8 @@ public class MovimientoController {
 		else {
 			status = HttpStatus.CREATED;
 			service.save(movimiento);
+			
+			
 		}
 		
 		respuesta = new ResponseEntity<Movimiento>(status);

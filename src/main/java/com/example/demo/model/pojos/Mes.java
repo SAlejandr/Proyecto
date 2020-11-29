@@ -26,7 +26,7 @@ public class Mes implements Serializable {
 	@Include
 	private MesFiscalId idFiscal;
 	
-	@Column(length=30)
+	@Column(length=30, unique = true)
 	private String nombre;
 
 	private LocalDate inicio;

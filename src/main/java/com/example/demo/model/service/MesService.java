@@ -66,6 +66,12 @@ public class MesService implements IMesService{
 		dao.inactivarTodos();
 		return  "exito";
 	}
+
+	@Override
+	public Optional<Mes> buscarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return dao.findByNombre(nombre);
+	}
 	
 	
 	
