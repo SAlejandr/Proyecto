@@ -13,10 +13,10 @@ import lombok.EqualsAndHashCode.Include;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 
 @Entity
 @Table(name = "mes_fiscal")

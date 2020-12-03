@@ -16,14 +16,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetUserDTO implements Serializable{
-
-	private String username, nombre, cargo;
 	
+	private int id;
+	private String username;
+	private String cargo;
+	private String nombre;
 	private List<Rol> roles;
-	
+
 	public GetUserDTO(Usuario user) {
 		
-		this(user.getUsername(), user.getNombre(), user.getCargo(), user.getRoles());
+		this(user.getId(),user.getUsername(), user.getCargo(), user.getNombre(), user.getRoles());
 	}
-	
 }

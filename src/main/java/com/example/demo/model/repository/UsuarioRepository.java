@@ -8,5 +8,5 @@ import com.example.demo.model.pojos.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-	public Optional<Usuario> findByUsername(String username);
+	public Usuario findByUsername(String username);
 }

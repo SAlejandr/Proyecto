@@ -1,5 +1,6 @@
 package com.example.demo.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,12 +86,21 @@ public class MovimientoController {
 	@GetMapping(value = "/getByDocumento")
 	public List<Movimiento> getByDocumento(@RequestParam(name = "n") String numDoc, @RequestParam(name = "tDoc") String tipoDoc){
 		
-		TipoDocumento d = tipoDocumentoService.findById(tipoDoc).get();
-		IdDocumento id = new IdDocumento(d, Long.parseLong(numDoc));
+		IdDocumento id = IdDocumento.builder().
+				numDocumento(Long.parseLong(numDoc)).
+				tipoDocumento(TipoDocumento.builder().
+						tipoDoc(tipoDoc).
+						build()).
+				build();
 		
 		Optional<Documento> documento = documentoService.findById(id);
 		
-		return service.buscarPorDocumento(documento.get());
+		System.err.println(documento.get());
+		
+		ArrayList<Movimiento> movimientos = new ArrayList<Movimiento>();
+		
+		movimientos.addAll(service.buscarPorDocumento(documento.get()));
+		return movimientos;
 	}
 	
 	@GetMapping(value = "/get")

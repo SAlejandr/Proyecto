@@ -42,7 +42,7 @@ public class Documento {
 	@JoinColumn(name = "estado")
 	private Estado estado;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userResponsable")
 	private Usuario userResponsable;
 	

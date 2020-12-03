@@ -1,5 +1,6 @@
 package com.example.demo.model.pojos;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode.Include;
 
 @Data
 @NoArgsConstructor
@@ -19,19 +21,19 @@ import lombok.NoArgsConstructor;
 @Builder
 
 @Entity
-public class SaldoCentroDeCostos {
+public class SaldoCentroDeCostos implements Serializable {
 	
 	@EmbeddedId
+	@Include
 	private IdSaldoCCostos elID;
 
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal sumDebito;
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal sumCredito;
 	
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal totalDebito;
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal totalCredito; 
-	
 }

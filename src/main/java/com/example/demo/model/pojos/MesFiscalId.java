@@ -13,8 +13,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
@@ -26,6 +26,6 @@ public class MesFiscalId implements Serializable {
 	@JoinColumn(name = "anno")
 	private Anno anno;
 
-	private String mes;
+	private int mes;
 
 }

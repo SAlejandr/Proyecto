@@ -27,14 +27,14 @@ public class SaldoTercero implements Serializable{
 	@Include
 	private IdSaldoTercero id;
 	
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal sumDebito;
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal sumCredito;
 	
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal totalDebito;
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal totalCredito; 
 
 }

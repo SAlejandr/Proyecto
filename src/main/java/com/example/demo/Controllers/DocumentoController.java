@@ -67,9 +67,9 @@ public class DocumentoController {
 		return documentos;
 	}
 
-	@GetMapping(value = "/getMovimientos")
-	public List<Movimiento> getMethodName(@RequestBody Mes mes, @RequestBody Documento documento) {
-		return subService.buscarPorMesYDocumento(documento, mes);
+	@PostMapping(value = "/getMovimientos")
+	public List<Movimiento> getMethodName(@RequestBody Documento documento) {
+		return subService.buscarPorDocumento(documento);
 	}
 
 

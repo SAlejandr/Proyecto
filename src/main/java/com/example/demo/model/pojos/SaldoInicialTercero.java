@@ -25,8 +25,8 @@ public class SaldoInicialTercero implements Serializable{
 	@EmbeddedId
 	private IdSaldoInTercero id;
 	
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal debito;
-	@Column(precision = 15, scale = 2)
+	@Column(precision = 15, scale =2)
 	private BigDecimal credito;
 }

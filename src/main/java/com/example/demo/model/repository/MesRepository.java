@@ -18,6 +18,7 @@ import com.example.demo.model.pojos.MesFiscalId;
 @Repository
 public interface MesRepository extends JpaRepository<Mes, MesFiscalId> {
 
+
 	public List<Mes> findByInicioGreaterThanEqualAndFinLessThan(LocalDate d1, LocalDate d2);
 	
 	public Optional<Mes> findByNombre(String nombre);
