@@ -115,6 +115,14 @@ public class MesController {
 		return respuesta;
 		
 	}
+	
+	@GetMapping(value = "/getAllDeAnno")
+	public List<Mes> getAllDeAnno(@RequestParam int anno){
+		
+		Optional<Anno> elAnno = annoService.findById(anno);
+				
+		return service.buscarMesesEnRango(elAnno.get().getInicioAnno(), elAnno.get().getFinAnno()); 
+	}
 
 	
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="07d9e97b-968e-421e-8f88-a513934eab69">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from anios]]>
+	</queryString>
+	<field name="anio" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="anio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anios"/>
+	</field>
+	<field name="fin_anio" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fin_anio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anios"/>
+	</field>
+	<field name="inicio_anio" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="inicio_anio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anios"/>
+	</field>
+	<field name="cod_estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cod_estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="anios"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="298" y="45" width="100" height="30" uuid="d9e81252-20c2-45e4-81bf-55a082f0ad1c"/>
+				<text><![CDATA[Esto es el titulazo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="61" y="0" width="100" height="30" uuid="39b40f57-8f8c-44a0-85b8-777bf1475077">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="575274fb-c5a8-4b89-b30a-6f81660afb68"/>
+				</reportElement>
+				<text><![CDATA[anio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="0" width="100" height="30" uuid="2310b695-23c3-45bc-9c69-cd01077a94a0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d6e1a4f-6c42-44d7-84d6-56b28c9a7048"/>
+				</reportElement>
+				<text><![CDATA[inicio_anio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="30" uuid="f34dd332-54bf-45b6-9b10-7638850980a1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d78c0ed8-412e-4410-8acb-0436e684077a"/>
+				</reportElement>
+				<text><![CDATA[fin_anio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="61" y="28" width="100" height="30" uuid="af169d7f-da2f-43da-9741-d4cad1f6051c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="575274fb-c5a8-4b89-b30a-6f81660afb68"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="30" width="100" height="30" uuid="c3e6c4cd-f417-4ddf-9328-d6a25bf5ca48">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d6e1a4f-6c42-44d7-84d6-56b28c9a7048"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{inicio_anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="30" width="100" height="30" uuid="a69f24e5-6e5b-4432-82d2-adc356e57c15">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d78c0ed8-412e-4410-8acb-0436e684077a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fin_anio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -71,9 +71,9 @@ public class UsuarioService implements IUsuarioService, UserDetailsService{
 	}
 
 	@Override
-	public Optional<Usuario> findByUsername(String username) {
+	public Usuario findByUsername(String username) {
 		// TODO Auto-generated method stub
-		return Optional.of(dao.findByUsername(username));
+		return dao.findByUsername(username);
 	}
 
 	@Override

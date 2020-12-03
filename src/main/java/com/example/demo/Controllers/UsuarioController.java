@@ -80,10 +80,10 @@ public class UsuarioController {
 		
 		ResponseEntity<Usuario> respuesta;
 		
-		Optional<Usuario> optional = service.findByUsername(username);
+		Usuario optional = service.findByUsername(username);
 		
-		if(optional.isPresent()) 
-			respuesta = new ResponseEntity<Usuario>(optional.get(), HttpStatus.OK);
+		if(optional !=null) 
+			respuesta = new ResponseEntity<Usuario>(optional, HttpStatus.OK);
 		else
 			respuesta = new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
 		

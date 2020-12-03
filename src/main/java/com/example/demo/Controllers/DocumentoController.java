@@ -1,8 +1,6 @@
 package com.example.demo.Controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.pojos.Documento;
 import com.example.demo.model.pojos.IdDocumento;
 import com.example.demo.model.pojos.Mes;
-import com.example.demo.model.pojos.MesFiscalId;
 import com.example.demo.model.pojos.Movimiento;
+import com.example.demo.model.pojos.Usuario;
 import com.example.demo.model.service.IDocumentoService;
 import com.example.demo.model.service.IMesService;
 import com.example.demo.model.service.IMovimientoService;
-import com.example.demo.model.service.MesService;
+import com.example.demo.model.service.IUsuarioService;
 
 @RestController
 @RequestMapping("pro/documento")
@@ -34,6 +32,7 @@ public class DocumentoController {
 	@Autowired private IDocumentoService service;
 	@Autowired private IMovimientoService subService;
 	@Autowired private IMesService mesService;
+	@Autowired private IUsuarioService userService;
 
 
 	@GetMapping("/get")
@@ -54,28 +53,27 @@ public class DocumentoController {
 	}
 	
 	@GetMapping(value = "/getAllByMes")
-	public List<Documento> getAllByMes(@RequestParam String nombreMes){
+	public List<Documento> getAllByMes(@RequestParam String nombreMes) {
 		Optional<Mes> optional = mesService.buscarPorNombre(nombreMes);
-		
 		ArrayList<Documento> documentos = new ArrayList<Documento>();
-		
-		if(optional.isPresent()) {
-			
+		if (optional.isPresent()) {
 			documentos.addAll(service.buscarPorMes(optional.get()));
 		}
-		
 		return documentos;
 	}
 
-	@PostMapping(value = "/getMovimientos")
-	public List<Movimiento> getMethodName(@RequestBody Documento documento) {
-		return subService.buscarPorDocumento(documento);
+	@GetMapping(value = "/getMovimientos")
+	public List<Movimiento> getMethodName(@RequestBody Mes mes, @RequestBody Documento documento) {
+		return subService.buscarPorMesYDocumento(documento, mes);
 	}
 
 
 	@PostMapping(value = "/add")
 	public ResponseEntity<Documento> addDocumento(@RequestBody Documento documento) {
 		//TODO: process POST request
+		/*Usuario user = userService.findById(documento.getUserResponsable().getId()).get();
+		
+		documento.setUserResponsable(user);*/
 		ResponseEntity<Documento> respuesta = new ResponseEntity<Documento>(HttpStatus.BAD_REQUEST);
 
 		IdDocumento id = documento.getIdDocumento();

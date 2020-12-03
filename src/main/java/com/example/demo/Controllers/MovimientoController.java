@@ -1,6 +1,5 @@
 package com.example.demo.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,8 +49,6 @@ public class MovimientoController {
 		else {
 			status = HttpStatus.CREATED;
 			service.save(movimiento);
-			
-			
 		}
 		
 		respuesta = new ResponseEntity<Movimiento>(status);
@@ -86,21 +83,12 @@ public class MovimientoController {
 	@GetMapping(value = "/getByDocumento")
 	public List<Movimiento> getByDocumento(@RequestParam(name = "n") String numDoc, @RequestParam(name = "tDoc") String tipoDoc){
 		
-		IdDocumento id = IdDocumento.builder().
-				numDocumento(Long.parseLong(numDoc)).
-				tipoDocumento(TipoDocumento.builder().
-						tipoDoc(tipoDoc).
-						build()).
-				build();
+		TipoDocumento d = tipoDocumentoService.findById(tipoDoc).get();
+		IdDocumento id = new IdDocumento(d, Long.parseLong(numDoc));
 		
 		Optional<Documento> documento = documentoService.findById(id);
 		
-		System.err.println(documento.get());
-		
-		ArrayList<Movimiento> movimientos = new ArrayList<Movimiento>();
-		
-		movimientos.addAll(service.buscarPorDocumento(documento.get()));
-		return movimientos;
+		return service.buscarPorDocumento(documento.get());
 	}
 	
 	@GetMapping(value = "/get")

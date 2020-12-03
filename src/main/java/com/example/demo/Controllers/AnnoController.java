@@ -58,7 +58,7 @@ public class AnnoController {
 		ResponseEntity<Anno> respuesta; 
 
 		HttpStatus status;
-		if(service.findById(a.getElAnno()).isPresent()) {
+		if(service.findById(a.getElAnno())!=null) {
 			status = HttpStatus.ACCEPTED;
 
 			service.save(a);
@@ -91,6 +91,8 @@ public class AnnoController {
 		return respuesta;
 	}
 	
+
+	
 	@GetMapping(value = "/inactivateAll")						//*******************************************
 	public String inactivarTodos(){
 		String respuesta = service.inactivarTodos();
@@ -104,6 +106,13 @@ public class AnnoController {
 		return service.findAll();
 		
 	}
+	
+	@GetMapping("/get/activo")
+	public Anno getActivo() {
+		
+		return service.findByCerrado(false).stream().findFirst().orElse(new Anno());
+	}
+	
 	
 	@DeleteMapping("/delete")
 	public ResponseEntity<Anno> deleteById(@RequestParam int id){

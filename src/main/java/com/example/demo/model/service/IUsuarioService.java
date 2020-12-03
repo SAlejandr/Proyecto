@@ -17,5 +17,5 @@ public interface IUsuarioService {
 	
 	public boolean deleteById(int id);
 
-	public Optional<Usuario> findByUsername(String username);
+	public Usuario findByUsername(String username);
 }

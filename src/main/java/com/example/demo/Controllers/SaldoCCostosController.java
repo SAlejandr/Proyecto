@@ -20,7 +20,7 @@ import com.example.demo.model.service.ISaldoCCostosService;
 import com.example.demo.model.service.SaldoCCostosService;
 
 @RestController
-@RequestMapping("pro/saldos/saldoCCostos")
+@RequestMapping("pro/saldos/saldoCCosto")
 public class SaldoCCostosController {
 	@Autowired private ISaldoCCostosService service;
 
